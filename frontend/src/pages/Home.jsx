@@ -31,7 +31,7 @@ const Home = () => {
         </div>
       )}
       {!homeVideos.length && !loading && (
-        <div className='flex items-center justify-center font-extrabold text-4xl'>
+        <div className='flex items-center justify-center font-extrabold text-4xl translate-x-4'>
           No Videos Found!
         </div>
       )}
