@@ -31,9 +31,12 @@ const Home = () => {
         </div>
       )}
       {!homeVideos.length && !loading && (
-        <div className='flex items-center justify-center font-extrabold text-4xl ml-8'>
-          No Videos Found!
-        </div>
+        // <div className='flex items-center justify-center font-extrabold text-4xl ml-8'>
+        //   No Videos Found!
+        // </div>
+        <div className="flex items-center justify-center font-extrabold text-4xl ml-4">
+  No Videos Found!
+</div>
       )}
       {error && <ErrorDialog message={error.message} />}
       
