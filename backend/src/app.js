@@ -19,12 +19,34 @@ const allowedOrigins = [
     "https://view-i1.vercel.app"
 ];
 
+// app.use(cors({
+//     origin: function (origin, callback) {
+//         // allow server-to-server / Postman
+//         if (!origin) return callback(null, true);
+
+//         if (allowedOrigins.includes(origin)) {
+//             return callback(null, true);
+//         }
+
+//         return callback(new Error("CORS not allowed"));
+//     },
+//     credentials: true,
+//     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+//     allowedHeaders: ["Content-Type", "Authorization"]
+// }));
+
 app.use(cors({
     origin: function (origin, callback) {
-        // allow server-to-server / Postman
+        // allow Postman / server-to-server
         if (!origin) return callback(null, true);
 
+        // allow local dev
         if (allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+
+        // ✅ allow ALL vercel deployments (production + preview)
+        if (origin.endsWith(".vercel.app")) {
             return callback(null, true);
         }
 
