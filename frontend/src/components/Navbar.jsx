@@ -91,7 +91,7 @@ const Navbar = ({ toggleMenu }) => {
             </div>
           </button>
           <Link to="/" className="text-2xl font-bold text-primary">
-            VidShare
+            ViewI
           </Link>
         </div>
 
