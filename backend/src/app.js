@@ -3,6 +3,9 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 
 const app = express()
+app.get("/", (req, res) => {
+    res.status(200).send("Backend API is running 🚀");
+});
 
 app.use(cors({
     origin: "http://localhost:5173",
